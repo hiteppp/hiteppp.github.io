@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MVVM模型</title>
-    <url>/2023/06/22/MVVM%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p><img src="/../images/MVVM%E6%A8%A1%E5%9E%8B/MVVM%E6%A8%A1%E5%9E%8B.png"></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 视图View <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
-        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>adress<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
-        Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token comment">//创建Vue实例</span>
-        <span class="token comment">//Vue的实例对象视图模型ViewModel</span>
-        <span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
-            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
-            <span class="token comment">// el: document.getElementById('root')</span>
-            <span class="token comment">//模型Model</span>
-            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span><span class="token punctuation">,</span>
-                <span class="token literal-property property">adress</span><span class="token operator">:</span> <span class="token string">'重庆'</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Vue</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Object.defineProperty方法</title>
     <url>/2023/06/23/Object-defineProperty%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
@@ -102,6 +71,114 @@
 <p>let不存在变量提升，在没有给变量赋值时是不能用的，一但使用会直接报错，这种情况叫暂时性死区</p>
 <p><img src="/../images/2023-6-12-8.png" alt="img"></p>
 <p> <img src="/../images/2023-6-12-9.png" alt="img"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>MVVM模型</title>
+    <url>/2023/06/22/MVVM%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p><img src="/../images/MVVM%E6%A8%A1%E5%9E%8B/MVVM%E6%A8%A1%E5%9E%8B.png"></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 视图View <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>adress<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+        Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token comment">//创建Vue实例</span>
+        <span class="token comment">//Vue的实例对象视图模型ViewModel</span>
+        <span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
+            <span class="token comment">// el: document.getElementById('root')</span>
+            <span class="token comment">//模型Model</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">adress</span><span class="token operator">:</span> <span class="token string">'重庆'</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2023/06/22/test/</url>
+    <content><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"../Vue导入文件/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+
+    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+
+        <span class="token comment">//创建Vue实例</span>
+        <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
+            <span class="token comment">// el: document.getElementById('root')</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
+
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>v-bind/v-model数据绑定</title>
+    <url>/2023/06/22/v-bind-v-model%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</url>
+    <content><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>bing只可以使得数据流向页面 <span class="token operator">--</span><span class="token operator">></span>
+        单项数据绑定：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>bind<span class="token operator">:</span>value<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">></span>
+
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>model只适用于表单元素 如input<span class="token punctuation">,</span>select等元素<span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>model<span class="token operator">:</span>value可以简写成v<span class="token operator">-</span>model<span class="token punctuation">,</span>因为v<span class="token operator">-</span>model默认收集value值 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>model既可以使得数据流向页面，也可以使页面流向数据 <span class="token operator">--</span><span class="token operator">></span>
+        双项数据绑定：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">:</span>value<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+
+    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+        Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token comment">//创建Vue实例</span>
+        <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
+            <span class="token comment">// el: document.getElementById('root')</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">school</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'卢航我儿'</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'https://www.baidu.com'</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 ]]></content>
   </entry>
   <entry>
@@ -202,47 +279,10 @@
 ]]></content>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2023/06/22/test/</url>
-    <content><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
-<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
-
-<span class="token operator">&lt;</span>head<span class="token operator">></span>
-    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
-    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"../Vue导入文件/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>body<span class="token operator">></span>
-    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-
-    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
-
-        <span class="token comment">//创建Vue实例</span>
-        <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
-            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
-            <span class="token comment">// el: document.getElementById('root')</span>
-            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
-
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-
-    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    <title>我的第一篇文章</title>
+    <url>/2023/06/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="Vue-React-HTML5-CSS3-JS-ES6"><a href="#Vue-React-HTML5-CSS3-JS-ES6" class="headerlink" title="Vue,React,HTML5,CSS3,JS,ES6"></a>Vue,React,HTML5,CSS3,JS,ES6</h1><p><img src="/../images/2023-6-12.jpg"></p>
 ]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
   </entry>
   <entry>
     <title>模板语法(插值语法和指令语法)</title>
@@ -278,12 +318,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>我的第一篇文章</title>
-    <url>/2023/06/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="Vue-React-HTML5-CSS3-JS-ES6"><a href="#Vue-React-HTML5-CSS3-JS-ES6" class="headerlink" title="Vue,React,HTML5,CSS3,JS,ES6"></a>Vue,React,HTML5,CSS3,JS,ES6</h1><p><img src="/../images/2023-6-12.jpg"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>预解析与变量</title>
     <url>/2023/06/13/%E9%A2%84%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%8F%98%E9%87%8F/</url>
     <content><![CDATA[<p>全局变量：在函数外部的变量，在浏览器被关闭的时候才会被销毁，比较占内存。</p>
@@ -309,40 +343,6 @@
 <span class="token punctuation">&#125;</span>
 num<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>v-bind/v-model数据绑定</title>
-    <url>/2023/06/22/v-bind-v-model%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</url>
-    <content><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>bing只可以使得数据流向页面 <span class="token operator">--</span><span class="token operator">></span>
-        单项数据绑定：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>bind<span class="token operator">:</span>value<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">></span>
-
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>model只适用于表单元素 如input<span class="token punctuation">,</span>select等元素<span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>model<span class="token operator">:</span>value可以简写成v<span class="token operator">-</span>model<span class="token punctuation">,</span>因为v<span class="token operator">-</span>model默认收集value值 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> v<span class="token operator">-</span>model既可以使得数据流向页面，也可以使页面流向数据 <span class="token operator">--</span><span class="token operator">></span>
-        双项数据绑定：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">:</span>value<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-
-    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
-        Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token comment">//创建Vue实例</span>
-        <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
-            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
-            <span class="token comment">// el: document.getElementById('root')</span>
-            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span><span class="token punctuation">,</span>
-                <span class="token literal-property property">school</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'卢航我儿'</span><span class="token punctuation">,</span>
-                    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'https://www.baidu.com'</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 ]]></content>
   </entry>
