@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"lzkpersonal.com.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&lt;div id&#x3D;&quot;root&quot;&gt;         &lt;!-- 插值语法:用于解析标签体内容,可以是js表达式 --&gt;         &lt;h1&gt;Hello,&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;&#x2F;h1&gt;         &lt;h1&gt;Hello,&amp;#123;&amp;#123;i+5&amp;#125;&amp;#125;&lt;&#x2F;h1&gt;         &lt;!-- 指令语法:用">
+  <meta name="description" content="计算属性可以实现的功能监视属性都可以实现，但监视属性能实现的功能计算属性不一定能实现，如异步(定时器的回调函数) 被Vue所管理的函数最好都写成普通函数，不被Vue所管理的函数(如定时器的回调函数，ajax的回调函数)最好都写成箭头函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模板语法(插值语法和指令语法)">
-<meta property="og:url" content="http://lzkpersonal.com.cn/2023/06/22/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95-%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95%E5%92%8C%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:title" content="监视属性(watch)和计算属(computed)性对比">
+<meta property="og:url" content="http://lzkpersonal.com.cn/2023/06/23/%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7%E5%92%8C%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%AF%94/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="&lt;div id&#x3D;&quot;root&quot;&gt;         &lt;!-- 插值语法:用于解析标签体内容,可以是js表达式 --&gt;         &lt;h1&gt;Hello,&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;&#x2F;h1&gt;         &lt;h1&gt;Hello,&amp;#123;&amp;#123;i+5&amp;#125;&amp;#125;&lt;&#x2F;h1&gt;         &lt;!-- 指令语法:用">
+<meta property="og:description" content="计算属性可以实现的功能监视属性都可以实现，但监视属性能实现的功能计算属性不一定能实现，如异步(定时器的回调函数) 被Vue所管理的函数最好都写成普通函数，不被Vue所管理的函数(如定时器的回调函数，ajax的回调函数)最好都写成箭头函数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-21T18:52:04.000Z">
-<meta property="article:modified_time" content="2023-06-21T18:56:21.720Z">
+<meta property="article:published_time" content="2023-06-23T08:53:12.000Z">
+<meta property="article:modified_time" content="2023-06-23T08:59:07.096Z">
 <meta property="article:author" content="前端童鞋">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://lzkpersonal.com.cn/2023/06/22/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95-%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95%E5%92%8C%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95/">
+<link rel="canonical" href="http://lzkpersonal.com.cn/2023/06/23/%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7%E5%92%8C%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%AF%94/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>模板语法(插值语法和指令语法) | 我的个人博客</title>
+  <title>监视属性(watch)和计算属(computed)性对比 | 我的个人博客</title>
   
 
 
@@ -181,7 +181,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/06/22/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95-%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95%E5%92%8C%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/06/23/%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7%E5%92%8C%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%AF%94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -194,7 +194,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          模板语法(插值语法和指令语法)
+          监视属性(watch)和计算属(computed)性对比
         </h1>
 
         <div class="post-meta">
@@ -205,7 +205,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-06-22 02:52:04 / 修改时间：02:56:21" itemprop="dateCreated datePublished" datetime="2023-06-22T02:52:04+08:00">2023-06-22</time>
+              <time title="创建时间：2023-06-23 16:53:12 / 修改时间：16:59:07" itemprop="dateCreated datePublished" datetime="2023-06-23T16:53:12+08:00">2023-06-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
             </span>
 
           
@@ -226,34 +235,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 插值语法<span class="token operator">:</span>用于解析标签体内容<span class="token punctuation">,</span>可以是js表达式 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
-        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>i<span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 指令语法<span class="token operator">:</span>用于解析标签<span class="token punctuation">,</span>也可以写js表达式 <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>a v<span class="token operator">-</span>bind<span class="token operator">:</span>href<span class="token operator">=</span><span class="token string">"school.url"</span><span class="token operator">></span>我的名字叫<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>school<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-
-    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
-        Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token comment">//创建Vue实例</span>
-        <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
-            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
-            <span class="token comment">// el: document.getElementById('root')</span>
-            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                <span class="token literal-property property">i</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span><span class="token punctuation">,</span>
-                <span class="token literal-property property">school</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'卢航我儿'</span><span class="token punctuation">,</span>
-                    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'https://lzkpersonal.com.cn'</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+        <p>计算属性可以实现的功能监视属性都可以实现，但监视属性能实现的功能计算属性不一定能实现，如异步(定时器的回调函数)</p>
+<p>被Vue所管理的函数最好都写成普通函数，不被Vue所管理的函数(如定时器的回调函数，ajax的回调函数)最好都写成箭头函数</p>
 
     </div>
 
@@ -270,7 +253,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://lzkpersonal.com.cn/2023/06/22/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95-%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95%E5%92%8C%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95/" title="模板语法(插值语法和指令语法)">http://lzkpersonal.com.cn/2023/06/22/模板语法-插值语法和指令语法/</a>
+    <a href="http://lzkpersonal.com.cn/2023/06/23/%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7%E5%92%8C%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%AF%94/" title="监视属性(watch)和计算属(computed)性对比">http://lzkpersonal.com.cn/2023/06/23/监视属性和计算属性对比/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -287,13 +270,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/06/22/js%E6%95%B0%E7%BB%84%E8%AF%A6%E8%A7%A3/" rel="prev" title="js数组详解">
-      <i class="fa fa-chevron-left"></i> js数组详解
+    <a href="/2023/06/23/%E7%9B%91%E8%A7%86%E5%B1%9E%E6%80%A7/" rel="prev" title="监视属性(watch)">
+      <i class="fa fa-chevron-left"></i> 监视属性(watch)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/06/22/v-bind-v-model%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" rel="next" title="v-bind/v-model数据绑定">
-      v-bind/v-model数据绑定 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
