@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"lzkpersonal.com.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&lt;!DOCTYPE html&gt; &lt;html lang&#x3D;&quot;en&quot;&gt;  &lt;head&gt;     &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;     &lt;title&gt;Document&lt;&#x2F;title&gt;     &lt;script src&#x3D;&quot;..&#x2F;Vue导入文件&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt; &lt;&#x2F;head&gt;  &lt;body&gt;     &lt;div">
+  <meta name="description" content="&lt;div id&#x3D;&quot;root&quot;&gt;          &lt;!-- 数组遍历 --&gt;         &lt;h2&gt;人员列表&lt;&#x2F;h2&gt;         &lt;button @click.once&#x3D;&quot;add&quot;&gt;添加一个老刘&lt;&#x2F;button&gt;         &lt;ul&gt;             &lt;!-- index用来表示数组的索引值,key用来标志每个元素的唯一标识符 -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://lzkpersonal.com.cn/2023/06/22/test/index.html">
+<meta property="og:title" content="列表渲染(key的原理)">
+<meta property="og:url" content="http://lzkpersonal.com.cn/2023/06/24/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93-key%E7%9A%84%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="&lt;!DOCTYPE html&gt; &lt;html lang&#x3D;&quot;en&quot;&gt;  &lt;head&gt;     &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;     &lt;title&gt;Document&lt;&#x2F;title&gt;     &lt;script src&#x3D;&quot;..&#x2F;Vue导入文件&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt; &lt;&#x2F;head&gt;  &lt;body&gt;     &lt;div">
+<meta property="og:description" content="&lt;div id&#x3D;&quot;root&quot;&gt;          &lt;!-- 数组遍历 --&gt;         &lt;h2&gt;人员列表&lt;&#x2F;h2&gt;         &lt;button @click.once&#x3D;&quot;add&quot;&gt;添加一个老刘&lt;&#x2F;button&gt;         &lt;ul&gt;             &lt;!-- index用来表示数组的索引值,key用来标志每个元素的唯一标识符 -">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-22T10:28:05.000Z">
-<meta property="article:modified_time" content="2023-06-22T10:29:33.083Z">
+<meta property="article:published_time" content="2023-06-24T02:07:17.000Z">
+<meta property="article:modified_time" content="2023-06-24T02:25:10.812Z">
 <meta property="article:author" content="前端童鞋">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://lzkpersonal.com.cn/2023/06/22/test/">
+<link rel="canonical" href="http://lzkpersonal.com.cn/2023/06/24/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93-key%E7%9A%84%E5%8E%9F%E7%90%86/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>test | 我的个人博客</title>
+  <title>列表渲染(key的原理) | 我的个人博客</title>
   
 
 
@@ -181,7 +181,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/06/22/test/">
+    <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/06/24/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93-key%E7%9A%84%E5%8E%9F%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -194,7 +194,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          test
+          列表渲染(key的原理)
         </h1>
 
         <div class="post-meta">
@@ -205,7 +205,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-06-22 18:28:05 / 修改时间：18:29:33" itemprop="dateCreated datePublished" datetime="2023-06-22T18:28:05+08:00">2023-06-22</time>
+              <time title="创建时间：2023-06-24 10:07:17 / 修改时间：10:25:10" itemprop="dateCreated datePublished" datetime="2023-06-24T10:07:17+08:00">2023-06-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,7 +213,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+                  <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
                 </span>
             </span>
 
@@ -235,22 +235,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
-<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+        <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
 
-<span class="token operator">&lt;</span>head<span class="token operator">></span>
-    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
-    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"../Vue导入文件/vue.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>body<span class="token operator">></span>
-    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 数组遍历 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">></span>人员列表<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+        <span class="token operator">&lt;</span>button @click<span class="token punctuation">.</span>once<span class="token operator">=</span><span class="token string">"add"</span><span class="token operator">></span>添加一个老刘<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+        <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> index用来表示数组的索引值<span class="token punctuation">,</span>key用来标志每个元素的唯一标识符 <span class="token operator">--</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(p,index) in persons"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"p.id"</span><span class="token operator">></span>
+                <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>p<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">-</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>p<span class="token punctuation">.</span>age<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+                <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-
     <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+        <span class="token comment">// 面试题：React和Vue中key的原理</span>
+        <span class="token comment">// 1、key是DOM对象的标识，当数据发生变化时，Vue会根据新数据生成新的虚拟DOM</span>
+        <span class="token comment">// 2、随后Vue会根据新虚拟DOM和旧的虚拟DOM进行差异比较</span>
+
+        <span class="token comment">//比较规则如下</span>
+        <span class="token comment">//旧虚拟DOM中找到与新虚拟DOM相同的key:</span>
+        <span class="token comment">//若虚拟DOM内容没变，直接使用之前的真实DOM</span>
+        <span class="token comment">//若虚拟DOM内容改变，生成新的真实DOM</span>
+
+        <span class="token comment">//旧虚拟DOM中找到与新虚拟DOM相同的key:</span>
+        <span class="token comment">//创建新的真实DOM，然后渲染到页面</span>
 
         <span class="token comment">//创建Vue实例</span>
         <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
@@ -258,17 +267,22 @@
             <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
             <span class="token comment">// el: document.getElementById('root')</span>
             <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span>
-            <span class="token punctuation">&#125;</span>
+                <span class="token literal-property property">persons</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">&#123;</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'001'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">&#123;</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'002'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">19</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">&#123;</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'003'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'王五'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'老刘'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">21</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>persons<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
             <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
-
         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-
-    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
     </div>
@@ -286,7 +300,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://lzkpersonal.com.cn/2023/06/22/test/" title="test">http://lzkpersonal.com.cn/2023/06/22/test/</a>
+    <a href="http://lzkpersonal.com.cn/2023/06/24/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93-key%E7%9A%84%E5%8E%9F%E7%90%86/" title="列表渲染(key的原理)">http://lzkpersonal.com.cn/2023/06/24/列表渲染-key的原理/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -303,13 +317,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/06/22/v-bind-v-model%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" rel="prev" title="v-bind/v-model数据绑定">
-      <i class="fa fa-chevron-left"></i> v-bind/v-model数据绑定
+    <a href="/2023/06/24/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93-%E5%9F%BA%E6%9C%AC%E5%88%97%E8%A1%A8/" rel="prev" title="列表渲染(基本列表v-for)">
+      <i class="fa fa-chevron-left"></i> 列表渲染(基本列表v-for)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/06/22/MVVM%E6%A8%A1%E5%9E%8B/" rel="next" title="MVVM模型">
-      MVVM模型 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
