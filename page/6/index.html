@@ -178,6 +178,120 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/07/05/705-%E7%BB%91%E5%AE%9A%E6%A0%B7%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="前端童鞋">
+      <meta itemprop="description" content="倚天抽宝剑，入海斩蛟龙">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/05/705-%E7%BB%91%E5%AE%9A%E6%A0%B7%E5%BC%8F/" class="post-title-link" itemprop="url">705_绑定样式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-05 23:18:46 / 修改时间：23:20:05" itemprop="dateCreated datePublished" datetime="2023-07-05T23:18:46+08:00">2023-07-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"root"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 绑定<span class="token keyword">class</span>样式，字符串写法，适用于：样式的类名不确定，需要动态指定 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"basic"</span> <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"mood"</span> @click<span class="token operator">=</span><span class="token string">"changeMood"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">></span>
+
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 绑定<span class="token keyword">class</span>样式，数组写法，适用于：要绑定的样式个数不确定，名字也不确定 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"basic"</span> <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"a"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">></span>
+
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 绑定<span class="token keyword">class</span>样式，对象写法，适用于：要绑定的样式个数确定，名字确定，动态决定用不用 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"basic"</span> <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"classObj"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">></span>
+
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 绑定style样式，对象写法 <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"basic"</span> <span class="token operator">:</span>style<span class="token operator">=</span><span class="token string">"styleObj"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
+
+        <span class="token comment">//创建Vue实例</span>
+        <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+            <span class="token comment">//用于指定Vue为哪一个容器服务，值通常为css选择器字符串</span>
+            <span class="token comment">// el: document.getElementById('root')</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'西南大学'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">mood</span><span class="token operator">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'a1'</span><span class="token punctuation">,</span> <span class="token string">'a2'</span><span class="token punctuation">,</span> <span class="token string">'a3'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">classObj</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                    <span class="token literal-property property">a1</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">//为false就是不应用，为true就是应用</span>
+                    <span class="token literal-property property">a2</span><span class="token operator">:</span> <span class="token boolean">false</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">styleObj</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                    <span class="token literal-property property">fontSize</span><span class="token operator">:</span> <span class="token string">'40px'</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token comment">//data用于存放数据，数据供el所指定容器服务</span>
+            <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">changeMood</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'zise'</span><span class="token punctuation">]</span>
+                    <span class="token keyword">const</span> index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>mood <span class="token operator">=</span> arr<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      
+    </div>
+
+    
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/07/05/705-%E5%8E%9F%E5%9E%8B%E9%93%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1349,153 +1463,6 @@ h4 <span class="token punctuation">&#123;</span>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lzkpersonal.com.cn/2023/06/28/628-%E9%BB%98%E8%AE%A4%E6%8F%92%E6%A7%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="前端童鞋">
-      <meta itemprop="description" content="倚天抽宝剑，入海斩蛟龙">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/28/628-%E9%BB%98%E8%AE%A4%E6%8F%92%E6%A7%BD/" class="post-title-link" itemprop="url">628_默认插槽</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-06-28 15:43:40 / 修改时间：15:45:27" itemprop="dateCreated datePublished" datetime="2023-06-28T15:43:40+08:00">2023-06-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue%E7%BB%84%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">Vue组件</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>App组件：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
-  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"container"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>category title<span class="token operator">=</span><span class="token string">"美食"</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>img
-        src<span class="token operator">=</span><span class="token string">"https://img95.699pic.com/photo/50089/9896.jpg_wh300.jpg"</span>
-        alt<span class="token operator">=</span><span class="token string">""</span>
-      <span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>category<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>category title<span class="token operator">=</span><span class="token string">"游戏"</span> <span class="token operator">:</span>listData<span class="token operator">=</span><span class="token string">"game"</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>ul<span class="token operator">></span>
-        <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(g, index) in game"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> g <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>category<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>category title<span class="token operator">=</span><span class="token string">"电影"</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(m, index) in movie"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> m <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>category<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token keyword">import</span> Category <span class="token keyword">from</span> <span class="token string">"./components/Category.vue"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"App"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> Category <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-      <span class="token literal-property property">food</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"米饭"</span><span class="token punctuation">,</span> <span class="token string">"面条"</span><span class="token punctuation">,</span> <span class="token string">"烧烤"</span><span class="token punctuation">,</span> <span class="token string">"啤酒"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">game</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"腾讯"</span><span class="token punctuation">,</span> <span class="token string">"网易"</span><span class="token punctuation">,</span> <span class="token string">"元神"</span><span class="token punctuation">,</span> <span class="token string">"lol"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">movie</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"蜘蛛侠"</span><span class="token punctuation">,</span> <span class="token string">"金刚"</span><span class="token punctuation">,</span> <span class="token string">"星际"</span><span class="token punctuation">,</span> <span class="token string">"深海"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"css"</span><span class="token operator">></span>
-<span class="token punctuation">.</span>container <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">display</span><span class="token operator">:</span> flex<span class="token punctuation">;</span>
-  justify<span class="token operator">-</span>content<span class="token operator">:</span> space<span class="token operator">-</span>around<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-img <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Category组件：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
-  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"category"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>h3<span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 定义一个插槽：（挖个坑，等着组件里面的使用者进行填充） <span class="token operator">--</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>slot<span class="token operator">></span>我是一个默认值，当使用者没有使用，我会出现<span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>ul<span class="token operator">></span>
-      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, index) in listData"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> item <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Category"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>style<span class="token operator">></span>
-<span class="token punctuation">.</span>category <span class="token punctuation">&#123;</span>
-  background<span class="token operator">-</span>color<span class="token operator">:</span> skyblue<span class="token punctuation">;</span>
-  <span class="token literal-property property">width</span><span class="token operator">:</span> 200px<span class="token punctuation">;</span>
-  <span class="token literal-property property">height</span><span class="token operator">:</span> 300px<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-h3 <span class="token punctuation">&#123;</span>
-  text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
-  background<span class="token operator">-</span>color<span class="token operator">:</span> orange<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-      
-    </div>
-
-    
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1567,7 +1534,7 @@ h3 <span class="token punctuation">&#123;</span>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1609,7 +1576,7 @@ h3 <span class="token punctuation">&#123;</span>
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.5k字</span>
+  <span class="post-count">博客全站共15.7k字</span>
 </div>
 
 
