@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"lzkpersonal.com.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="MyButton组件： import React from &#39;react&#39;; import &amp;#123; useState &amp;#125; from &#39;react&#39;;  export default function MyButton() &amp;#123;   const [count, setCount] &#x3D; useState(0);   function h">
+  <meta name="description" content="MyButton组件： import React from &#39;react&#39;; import &amp;#123; useState &amp;#125; from &#39;react&#39;;  export default function MyButton() &amp;#123;   const [count, setCount] &#x3D; useState(0);   function handleClicked() &amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="813_React官方文档_useState">
 <meta property="og:url" content="http://lzkpersonal.com.cn/2023/08/13/813-React%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-useState/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="MyButton组件： import React from &#39;react&#39;; import &amp;#123; useState &amp;#125; from &#39;react&#39;;  export default function MyButton() &amp;#123;   const [count, setCount] &#x3D; useState(0);   function h">
+<meta property="og:description" content="MyButton组件： import React from &#39;react&#39;; import &amp;#123; useState &amp;#125; from &#39;react&#39;;  export default function MyButton() &amp;#123;   const [count, setCount] &#x3D; useState(0);   function handleClicked() &amp;#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-13T04:23:47.000Z">
-<meta property="article:modified_time" content="2023-08-13T04:25:20.021Z">
+<meta property="article:modified_time" content="2023-08-15T06:43:14.515Z">
 <meta property="article:author" content="前端童鞋">
 <meta name="twitter:card" content="summary">
 
@@ -203,10 +203,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-13 12:23:47 / 修改时间：12:25:20" itemprop="dateCreated datePublished" datetime="2023-08-13T12:23:47+08:00">2023-08-13</time>
+              <time title="创建时间：2023-08-13 12:23:47" itemprop="dateCreated datePublished" datetime="2023-08-13T12:23:47+08:00">2023-08-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-15 14:43:14" itemprop="dateModified" datetime="2023-08-15T14:43:14+08:00">2023-08-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -236,46 +242,46 @@
 
       
         <p>MyButton组件：</p>
-<pre class="line-numbers language-react" data-language="react"><code class="language-react">import React from &#39;react&#39;;
-import &#123; useState &#125; from &#39;react&#39;;
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 
-export default function MyButton() &#123;
-  const [count, setCount] &#x3D; useState(0);
-  function handleClicked() &#123;
-    setCount(count + 1);
-  &#125;
-  return (
-    &lt;&gt;
-      &lt;button onClick&#x3D;&#123;handleClicked&#125;&gt;点了&#123;count&#125;次&lt;&#x2F;button&gt;
-    &lt;&#x2F;&gt;
-  );
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">MyButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">handleClicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>handleClicked<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">点了</span><span class="token punctuation">&#123;</span>count<span class="token punctuation">&#125;</span><span class="token plain-text">次</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>App组件</p>
-<pre class="line-numbers language-react" data-language="react"><code class="language-react">import React from &#39;react&#39;;
-import &#123; useState &#125; from &#39;react&#39;;
-import &#39;.&#x2F;components&#x2F;MyButton&#39;;
-import MyButton from &#39;.&#x2F;components&#x2F;MyButton&#39;;
-export default function App() &#123;
-  &#x2F;&#x2F;count的初始值是0，setCount用于更新count的值
-  const [count, setCount] &#x3D; useState(0);
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./components/MyButton'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> MyButton <span class="token keyword">from</span> <span class="token string">'./components/MyButton'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">//count的初始值是0，setCount用于更新count的值</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  function handleClick() &#123;
-    setCount(count + 1);
-  &#125;
-  return (
-    &lt;&gt;
-      &lt;button onClick&#x3D;&#123;handleClick&#125;&gt;点了我&#123;count&#125;次&lt;&#x2F;button&gt;
+  <span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>handleClick<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">点了我</span><span class="token punctuation">&#123;</span>count<span class="token punctuation">&#125;</span><span class="token plain-text">次</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
 
-      &lt;button onClick&#x3D;&#123;handleClick&#125;&gt;点了我&#123;count&#125;次&lt;&#x2F;button&gt;
-      &lt;p&gt;&lt;&#x2F;p&gt;
-      &#123;&#x2F;* 如果多次渲染同一个组件，会使得每个组件都会有自己的state 
-      每一个组件都会记得自己的count值，不会受到其他按钮影响*&#x2F;&#125;
-      &lt;MyButton &#x2F;&gt;
-      &lt;MyButton &#x2F;&gt;
-    &lt;&#x2F;&gt;
-  );
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>handleClick<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">点了我</span><span class="token punctuation">&#123;</span>count<span class="token punctuation">&#125;</span><span class="token plain-text">次</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">&#123;</span><span class="token comment">/* 如果多次渲染同一个组件，会使得每个组件都会有自己的state 
+      每一个组件都会记得自己的count值，不会受到其他按钮影响*/</span><span class="token punctuation">&#125;</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyButton</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyButton</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
     </div>
@@ -432,7 +438,7 @@ export default function App() &#123;
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.6k字</span>
+  <span class="post-count">博客全站共31.2k字</span>
 </div>
 
 

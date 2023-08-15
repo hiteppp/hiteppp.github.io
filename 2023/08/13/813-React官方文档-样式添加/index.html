@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"lzkpersonal.com.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="import React from &#39;react&#39;; import &#39;.&#x2F;App.css&#39;; function MyButton() &amp;#123;   return &lt;button&gt;点我&lt;&#x2F;button&gt;; &amp;#125; const user &#x3D; &amp;#123;   name: &#39;lzk&#39;,   c">
+  <meta name="description" content="import React from &#39;react&#39;; import &#39;.&#x2F;App.css&#39;; function MyButton() &amp;#123;   return &lt;button&gt;点我&lt;&#x2F;button&gt;; &amp;#125; const user &#x3D; &amp;#123;   name: &#39;lzk&#39;,   color: &#39;pink&#39;,   imgUrl:     &#39;https:&#x2F;&#x2F;img0.bai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="813_React官方文档_样式添加">
 <meta property="og:url" content="http://lzkpersonal.com.cn/2023/08/13/813-React%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-%E6%A0%B7%E5%BC%8F%E6%B7%BB%E5%8A%A0/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="import React from &#39;react&#39;; import &#39;.&#x2F;App.css&#39;; function MyButton() &amp;#123;   return &lt;button&gt;点我&lt;&#x2F;button&gt;; &amp;#125; const user &#x3D; &amp;#123;   name: &#39;lzk&#39;,   c">
+<meta property="og:description" content="import React from &#39;react&#39;; import &#39;.&#x2F;App.css&#39;; function MyButton() &amp;#123;   return &lt;button&gt;点我&lt;&#x2F;button&gt;; &amp;#125; const user &#x3D; &amp;#123;   name: &#39;lzk&#39;,   color: &#39;pink&#39;,   imgUrl:     &#39;https:&#x2F;&#x2F;img0.bai">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-13T04:16:51.000Z">
-<meta property="article:modified_time" content="2023-08-13T04:21:39.287Z">
+<meta property="article:modified_time" content="2023-08-15T06:42:14.966Z">
 <meta property="article:author" content="前端童鞋">
 <meta name="twitter:card" content="summary">
 
@@ -203,10 +203,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-13 12:16:51 / 修改时间：12:21:39" itemprop="dateCreated datePublished" datetime="2023-08-13T12:16:51+08:00">2023-08-13</time>
+              <time title="创建时间：2023-08-13 12:16:51" itemprop="dateCreated datePublished" datetime="2023-08-13T12:16:51+08:00">2023-08-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-15 14:42:14" itemprop="dateModified" datetime="2023-08-15T14:42:14+08:00">2023-08-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -235,31 +241,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre class="line-numbers language-react" data-language="react"><code class="language-react">import React from &#39;react&#39;;
-import &#39;.&#x2F;App.css&#39;;
-function MyButton() &#123;
-  return &lt;button&gt;点我&lt;&#x2F;button&gt;;
-&#125;
-const user &#x3D; &#123;
-  name: &#39;lzk&#39;,
-  color: &#39;pink&#39;,
-  imgUrl:
-    &#39;https:&#x2F;&#x2F;img0.baidu.com&#x2F;it&#x2F;u&#x3D;3021883569,1259262591&amp;fm&#x3D;253&amp;fmt&#x3D;auto&amp;app&#x3D;120&amp;f&#x3D;JPEG?w&#x3D;1140&amp;h&#x3D;641&#39;,
-&#125;;
+        <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./App.css'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">MyButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">点我</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'lzk'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'pink'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">imgUrl</span><span class="token operator">:</span>
+    <span class="token string">'https://img0.baidu.com/it/u=3021883569,1259262591&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=1140&amp;h=641'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-export default function App() &#123;
-  return (
-    &lt;&gt;
-      &lt;h1 className&#x3D;&quot;h1Color&quot;&gt;Hello&lt;&#x2F;h1&gt;
-      &#123;&#x2F;* 行内样式的编写方法 style&#x3D;&#123; &#125; JSX 大括号内的一个普通 &#123;&#125; 对象*&#x2F;&#125;
-      &lt;h1 style&#x3D;&#123;&#123; color: user.color, fontSize: 36 &#125;&#125;&gt;欢迎来到React的世界&lt;&#x2F;h1&gt;
-      &#123;&#x2F;* 嵌套组件 *&#x2F;&#125;
-      &lt;MyButton &#x2F;&gt;
-      &#123;&#x2F;* src也可以读取变量 *&#x2F;&#125;
-      &lt;img src&#x3D;&#123;user.imgUrl&#125; className&#x3D;&quot;pic&quot; alt&#x3D;&quot;&quot; &#x2F;&gt;
-    &lt;&#x2F;&gt;
-  );
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>h1Color<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Hello</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">&#123;</span><span class="token comment">/* 行内样式的编写方法 style=&#123; &#125; JSX 大括号内的一个普通 &#123;&#125; 对象*/</span><span class="token punctuation">&#125;</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">color</span><span class="token operator">:</span> user<span class="token punctuation">.</span>color<span class="token punctuation">,</span> <span class="token literal-property property">fontSize</span><span class="token operator">:</span> <span class="token number">36</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">欢迎来到React的世界</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">&#123;</span><span class="token comment">/* 嵌套组件 */</span><span class="token punctuation">&#125;</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyButton</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token punctuation">&#123;</span><span class="token comment">/* src也可以读取变量 */</span><span class="token punctuation">&#125;</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>user<span class="token punctuation">.</span>imgUrl<span class="token punctuation">&#125;</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pic<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
     </div>
@@ -416,7 +422,7 @@ export default function App() &#123;
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.6k字</span>
+  <span class="post-count">博客全站共31.2k字</span>
 </div>
 
 
